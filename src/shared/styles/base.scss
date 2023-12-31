@@ -6,7 +6,7 @@
   --c_white: #fffdf7;
   --c_black: #3e3a35;
   --c_1: #f36363;
-  --c_2: #ffbeb5;
+  --c_2: #ffb9b5;
   --c_3: #ffdfdb;
   --c_4: #ffdcb4;
 }
@@ -54,4 +54,12 @@ span {
 
 .b4 {
   background: var(--c_4);
+}
+
+.b5 {
+  background: var(--c_white);
+}
+
+.b6 {
+  background: var(--c_black);
 }
