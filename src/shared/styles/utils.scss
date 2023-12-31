@@ -1,0 +1,13 @@
+@use './mixins/mq.scss' as *;
+
+.pc {
+  @include sp {
+    display: none !important;
+  }
+}
+
+.sp {
+  @include pc {
+    display: none !important;
+  }
+}

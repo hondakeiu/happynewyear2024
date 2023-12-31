@@ -1,0 +1,57 @@
+@use 'sass:math';
+@use './mixins/mq.scss' as *;
+
+:root {
+  --c_bg: #fffaf3;
+  --c_white: #fffdf7;
+  --c_black: #3e3a35;
+  --c_1: #f36363;
+  --c_2: #ffbeb5;
+  --c_3: #ffdfdb;
+  --c_4: #ffdcb4;
+}
+
+html {
+  @include pc {
+    font-size: math.div(10, 1280) * 100vw;
+  }
+  @include sp {
+    font-size: math.div(10, 375) * 100vw;
+  }
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  text-size-adjust: 100%;
+  background: var(--c_bg);
+  font-size: 1rem;
+  overflow: hidden;
+  height: 100vh;
+  height: 100dvh;
+  @include pc {
+    min-height: 60rem;
+  }
+}
+
+span {
+  display: block;
+}
+
+.b1 {
+  background: var(--c_1);
+}
+
+.b2 {
+  background: var(--c_2);
+}
+
+.b3 {
+  background: var(--c_3);
+}
+
+.b4 {
+  background: var(--c_4);
+}

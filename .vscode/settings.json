@@ -1,0 +1,9 @@
+{
+  "editor.formatOnSave": true,
+  "eslint.options": {
+    "extensions": [".ts", ".tsx"]
+  },
+  "[html]": {
+    "editor.formatOnSave": false
+  }
+}

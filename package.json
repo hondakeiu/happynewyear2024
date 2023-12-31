@@ -1,0 +1,30 @@
+{
+  "name": "happynewyear",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "serve": "vite preview",
+    "lint": "eslint src --ext .ts,.tsx,.js,.jsx",
+    "format": "prettier --write src/**/*.{ts,tsx,js,scss}"
+  },
+  "dependencies": {
+    "gsap": "^3.12.2",
+    "npm-check-updates": "^16.14.6",
+    "ress": "^5.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.6",
+    "@typescript-eslint/eslint-plugin": "^6.8.0",
+    "@typescript-eslint/parser": "^6.8.0",
+    "autoprefixer": "^10.4.16",
+    "eslint": "^8.51.0",
+    "postcss": "^8.4.31",
+    "prettier": "^3.0.3",
+    "sass": "^1.69.3",
+    "typescript": "^5.2.2",
+    "vite": "^4.4.11",
+    "vite-plugin-handlebars": "^1.6.0"
+  }
+}
