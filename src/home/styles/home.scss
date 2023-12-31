@@ -10,773 +10,872 @@
     height: 52rem;
     margin-top: 2rem;
   }
-}
-
-.year {
-  display: flex;
-  @include pc {
-    column-gap: 0.6rem;
-    margin-left: auto;
-  }
-  .num {
+  .year {
     display: flex;
     @include pc {
-      width: 9rem;
+      column-gap: 0.6rem;
+      margin-left: auto;
     }
-    &--2 {
-      flex-direction: column;
+    .num {
+      display: flex;
       @include pc {
-        height: 10.8rem;
+        width: 9rem;
       }
-      span {
-        flex: 1;
-        &:first-of-type {
-          border-radius: 0 9999px 0 0;
-        }
-        &:nth-of-type(2) {
-          border-radius: 9999px 0 9999px 0;
-        }
-      }
-    }
-    &--0 {
-      @include pc {
-        width: 10.8rem;
-      }
-      > span {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        > span {
-          border-radius: 50%;
-          @include pc {
-            width: 4.5rem;
-            height: 4.5rem;
-          }
-        }
-      }
-    }
-    &--4 {
-      span {
-        flex: 1;
-        &:first-of-type {
-          border-radius: 9999px 0 0 9999px;
-          @include pc {
-            height: 7.2rem;
-          }
-        }
-        &:nth-of-type(2) {
-          @include pc {
-            height: 3.6rem;
-            margin-top: 3.6rem;
-          }
-        }
-      }
-    }
-  }
-}
-
-.dragon {
-  position: absolute;
-  @include pc {
-    width: 67.5rem;
-    height: 46.5rem;
-    top: 4rem;
-    left: 0;
-  }
-  .face {
-    z-index: 3;
-    position: absolute;
-    @include pc {
-      width: 27.5rem;
-      height: 13rem;
-      left: 0;
-      top: 8rem;
-    }
-    .cheek {
-      position: absolute;
-      border-radius: 9999px 9999px 9999px 0;
-      @include pc {
-        width: 7.2rem;
-        height: 9.5rem;
-        left: 13.3rem;
-        top: 0.5rem;
-      }
-      .fire {
-        z-index: -1;
-        position: absolute;
-        display: flex;
+      &--2 {
         flex-direction: column;
         @include pc {
-          right: -7rem;
-          top: 0.9rem;
+          height: 10.8rem;
+        }
+        span {
+          flex: 1;
+          &:first-of-type {
+            border-radius: 0 9999px 0 0;
+          }
+          &:nth-of-type(2) {
+            border-radius: 9999px 0 9999px 0;
+          }
+        }
+      }
+      &--0 {
+        @include pc {
+          width: 10.8rem;
         }
         > span {
           display: flex;
+          justify-content: center;
           align-items: center;
-          border-radius: 0 0 9999px 0;
-          transform-origin: left top;
-          @include pc {
-            width: 10rem;
-            height: 3.7rem;
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+          > span {
+            border-radius: 50%;
+            @include pc {
+              width: 4.5rem;
+              height: 4.5rem;
+            }
           }
+        }
+      }
+      &--4 {
+        span {
+          flex: 1;
           &:first-of-type {
+            border-radius: 9999px 0 0 9999px;
             @include pc {
-              transform: rotate(-20deg) translate(-1rem, 1.9rem);
+              height: 7.2rem;
             }
           }
-          &:nth-of-type(3) {
+          &:nth-of-type(2) {
             @include pc {
-              transform: rotate(20deg) translate(-0.2rem, -2.3rem);
+              height: 3.6rem;
+              margin-top: 3.6rem;
             }
+          }
+        }
+      }
+    }
+  }
+  .dragon {
+    position: absolute;
+    @include pc {
+      width: 67.5rem;
+      height: 46.5rem;
+      top: 4rem;
+      left: 0;
+    }
+    .face {
+      z-index: 3;
+      position: absolute;
+      @include pc {
+        width: 27.5rem;
+        height: 13rem;
+        left: 0;
+        top: 8rem;
+      }
+      .cheek {
+        position: absolute;
+        border-radius: 9999px 9999px 9999px 0;
+        @include pc {
+          width: 7.2rem;
+          height: 9.5rem;
+          left: 13.3rem;
+          top: 0.5rem;
+        }
+        .fire {
+          z-index: -1;
+          position: absolute;
+          display: flex;
+          flex-direction: column;
+          @include pc {
+            right: -7rem;
+            top: 0.9rem;
           }
           > span {
+            display: flex;
+            align-items: center;
+            border-radius: 0 0 9999px 0;
+            transform-origin: left top;
+            @include pc {
+              width: 10rem;
+              height: 3.7rem;
+            }
+            &:first-of-type {
+              @include pc {
+                transform: rotate(-20deg) translate(-1rem, 1.9rem);
+              }
+            }
+            &:nth-of-type(3) {
+              @include pc {
+                transform: rotate(20deg) translate(-0.2rem, -2.3rem);
+              }
+            }
+            > span {
+              border-radius: 0 0 9999px 0;
+              @include pc {
+                width: 8.5rem;
+                height: 2.1rem;
+              }
+            }
+          }
+        }
+        .mane {
+          position: absolute;
+          display: flex;
+          flex-direction: column;
+          transform-origin: left top;
+          transform: rotate(-30deg);
+          @include pc {
+            right: -1.9rem;
+            top: 2.4rem;
+          }
+          span {
+            transform-origin: left top;
             border-radius: 0 0 9999px 0;
             @include pc {
-              width: 8.5rem;
+              width: 3.8rem;
+              height: 2.1rem;
+            }
+            &:nth-of-type(2) {
+              transform: rotate(25deg);
+              @include pc {
+                margin-top: -1.1rem;
+              }
+            }
+            &:nth-of-type(3) {
+              transform: rotate(45deg);
+              @include pc {
+                margin-top: -0.8rem;
+                margin-left: -0.3rem;
+              }
+            }
+            &:nth-of-type(4) {
+              transform: rotate(72deg);
+              @include pc {
+                margin-top: -1.1rem;
+                margin-left: -0.7rem;
+              }
+            }
+            &:nth-of-type(5) {
+              transform: rotate(90deg);
+              @include pc {
+                margin-top: -1.9rem;
+                margin-left: -2.1rem;
+              }
+            }
+          }
+        }
+        .horn {
+          position: absolute;
+          @include pc {
+            top: 1rem;
+            left: 2.2rem;
+          }
+          > span {
+            position: absolute;
+            border-radius: 0 0 9999px 0;
+            transform-origin: left top;
+            @include pc {
+              width: 10rem;
+              height: 1.5rem;
+            }
+            > span {
+              position: absolute;
+              border-radius: 9999px 0 0 0;
+              @include pc {
+                width: 1.5rem;
+                height: 1.5rem;
+                top: -1.4rem;
+                right: 1.5rem;
+              }
+            }
+            &:first-of-type {
+              transform: rotate(-65deg);
+              @include pc {
+                top: 0;
+                left: 0;
+              }
+            }
+            &:nth-of-type(2) {
+              transform: rotate(-45deg);
+              @include pc {
+                left: 2rem;
+                top: -0.5rem;
+              }
+            }
+          }
+        }
+        .eyebrow {
+          position: absolute;
+          @include pc {
+            left: 0;
+            top: 0.9rem;
+          }
+          > span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform-origin: left bottom;
+            border-radius: 9999px 0 9999px 0;
+            @include pc {
+              height: 1.3rem;
+            }
+            &:first-of-type {
+              @include pc {
+                width: 7rem;
+              }
+            }
+            &:nth-of-type(2) {
+              transform: rotate(-10deg);
+              @include pc {
+                width: 6.3rem;
+              }
+            }
+            &:nth-of-type(3) {
+              transform: rotate(-20deg);
+              @include pc {
+                width: 5.6rem;
+              }
+            }
+            &:nth-of-type(4) {
+              transform: rotate(-30deg);
+              @include pc {
+                width: 4rem;
+              }
+            }
+          }
+        }
+        .eye {
+          position: absolute;
+          @include pc {
+            top: 1rem;
+            left: -0.5rem;
+          }
+          span {
+            display: flex;
+            border-radius: 50%;
+          }
+          > span {
+            align-items: center;
+            justify-content: center;
+            @include pc {
+              width: 3.5rem;
+              height: 3.5rem;
+            }
+            > span {
+              @include pc {
+                width: 3rem;
+                height: 3rem;
+              }
+              > span {
+                @include pc {
+                  width: 1.4rem;
+                  height: 1.4rem;
+                  margin-top: 0.6rem;
+                  margin-left: 0.3rem;
+                }
+                > span {
+                  @include pc {
+                    width: 0.4rem;
+                    height: 0.4rem;
+                    margin-top: 0.4rem;
+                    margin-left: 0.3rem;
+                  }
+                }
+              }
+            }
+          }
+        }
+        .lip {
+          position: absolute;
+          display: flex;
+          flex-direction: column;
+          @include pc {
+            top: 4.8rem;
+            left: -0.1rem;
+          }
+          > span {
+            border-radius: 0 9999px 0 0;
+            @include pc {
+              width: 0.6rem;
               height: 2.1rem;
             }
           }
         }
       }
-      .mane {
-        position: absolute;
-        display: flex;
-        flex-direction: column;
-        transform-origin: left top;
-        transform: rotate(-30deg);
-        @include pc {
-          right: -1.9rem;
-          top: 2.4rem;
-        }
-        span {
-          transform-origin: left top;
-          border-radius: 0 0 9999px 0;
-          @include pc {
-            width: 3.8rem;
-            height: 2.1rem;
-          }
-          &:nth-of-type(2) {
-            transform: rotate(25deg);
-            @include pc {
-              margin-top: -1.1rem;
-            }
-          }
-          &:nth-of-type(3) {
-            transform: rotate(45deg);
-            @include pc {
-              margin-top: -0.8rem;
-              margin-left: -0.3rem;
-            }
-          }
-          &:nth-of-type(4) {
-            transform: rotate(72deg);
-            @include pc {
-              margin-top: -1.1rem;
-              margin-left: -0.7rem;
-            }
-          }
-          &:nth-of-type(5) {
-            transform: rotate(90deg);
-            @include pc {
-              margin-top: -1.9rem;
-              margin-left: -2.1rem;
-            }
-          }
-        }
-      }
-      .horn {
+      .upper {
         position: absolute;
         @include pc {
-          top: 1rem;
-          left: 2.2rem;
+          width: 11rem;
+          height: 3rem;
+          left: 3rem;
+          top: 2.6rem;
         }
-        > span {
+        .nose {
           position: absolute;
-          border-radius: 0 0 9999px 0;
-          transform-origin: left top;
-          @include pc {
-            width: 10rem;
-            height: 1.5rem;
-          }
-          > span {
-            position: absolute;
-            border-radius: 9999px 0 0 0;
-            @include pc {
-              width: 1.5rem;
-              height: 1.5rem;
-              top: -1.4rem;
-              right: 1.5rem;
-            }
-          }
-          &:first-of-type {
-            transform: rotate(-65deg);
-            @include pc {
-              top: 0;
-              left: 0;
-            }
-          }
-          &:nth-of-type(2) {
-            transform: rotate(-45deg);
-            @include pc {
-              left: 2rem;
-              top: -0.5rem;
-            }
-          }
-        }
-      }
-      .eyebrow {
-        position: absolute;
-        @include pc {
-          left: 0;
-          top: 0.9rem;
-        }
-        > span {
-          position: absolute;
-          top: 0;
-          left: 0;
-          transform-origin: left bottom;
-          border-radius: 9999px 0 9999px 0;
-          @include pc {
-            height: 1.3rem;
-          }
-          &:first-of-type {
-            @include pc {
-              width: 7rem;
-            }
-          }
-          &:nth-of-type(2) {
-            transform: rotate(-10deg);
-            @include pc {
-              width: 6.3rem;
-            }
-          }
-          &:nth-of-type(3) {
-            transform: rotate(-20deg);
-            @include pc {
-              width: 5.6rem;
-            }
-          }
-          &:nth-of-type(4) {
-            transform: rotate(-30deg);
-            @include pc {
-              width: 4rem;
-            }
-          }
-        }
-      }
-      .eye {
-        position: absolute;
-        @include pc {
-          top: 1rem;
-          left: -0.5rem;
-        }
-        span {
           display: flex;
-          border-radius: 50%;
-        }
-        > span {
-          align-items: center;
-          justify-content: center;
           @include pc {
-            width: 3.5rem;
-            height: 3.5rem;
+            bottom: 0.3rem;
+            left: -2.5rem;
           }
           > span {
-            @include pc {
-              width: 3rem;
-              height: 3rem;
-            }
-            > span {
+            border-radius: 50%;
+            &:first-of-type {
+              position: relative;
+              display: flex;
               @include pc {
-                width: 1.4rem;
-                height: 1.4rem;
-                margin-top: 0.6rem;
-                margin-left: 0.3rem;
+                width: 4.9rem;
+                height: 4.6rem;
               }
-              > span {
+              .hole {
+                border-radius: 50%;
                 @include pc {
-                  width: 0.4rem;
-                  height: 0.4rem;
-                  margin-top: 0.4rem;
-                  margin-left: 0.3rem;
+                  width: 0.8rem;
+                  height: 0.8rem;
+                  margin-top: 1.2rem;
+                  margin-left: 1rem;
+                }
+              }
+              .lip {
+                z-index: -1;
+                position: absolute;
+                @include pc {
+                  bottom: -0.6rem;
+                  left: -0.6rem;
+                }
+                > span {
+                  position: relative;
+                  &:first-of-type {
+                    border-radius: 50%;
+                    clip-path: inset(50% 0 0 0);
+                    @include pc {
+                      width: 6.1rem;
+                      height: 5.8rem;
+                    }
+                  }
+                  &:nth-of-type(2) {
+                    position: absolute;
+                    border-radius: 50%;
+                    @include pc {
+                      width: 1.2rem;
+                      height: 1.2rem;
+                      left: 0rem;
+                      top: 2.4rem;
+                    }
+                  }
                 }
               }
             }
+            &:nth-of-type(2) {
+              @include pc {
+                width: 3.1rem;
+                height: 3.4rem;
+                margin-left: -1rem;
+                margin-top: 1rem;
+              }
+            }
+          }
+        }
+        .fang {
+          display: flex;
+          position: absolute;
+          @include pc {
+            bottom: -1rem;
+            left: 0.1rem;
+            column-gap: 0.6rem;
+          }
+          > span {
+            border-radius: 0 0 0 9999px;
+            @include pc {
+              width: 0.6rem;
+              height: 0.8rem;
+            }
+          }
+        }
+        .lip {
+          position: absolute;
+          @include pc {
+            bottom: -0.3rem;
+            left: 0;
+          }
+          > span {
+            @include pc {
+              width: 10.3rem;
+              height: 0.6rem;
+            }
           }
         }
       }
-      .lip {
+      .lower {
         position: absolute;
-        display: flex;
-        flex-direction: column;
+        transform-origin: right top;
+        transform: rotate(-10deg);
+        border-radius: 0 0 0 9999px;
         @include pc {
-          top: 4.8rem;
-          left: -0.1rem;
+          width: 12rem;
+          height: 2.7rem;
+          left: 2.2rem;
+          top: 7.2rem;
         }
-        > span {
-          border-radius: 0 9999px 0 0;
+        .mane {
+          position: absolute;
+          display: flex;
+          transform-origin: left top;
+          transform: rotate(5deg);
+          top: 0;
+          left: 0;
+          span {
+            border-radius: 0 0 0 9999px;
+            transform-origin: left top;
+            @include pc {
+              height: 3.8rem;
+            }
+            &:first-of-type {
+              @include pc {
+                width: 3.3rem;
+              }
+            }
+            &:not(:first-of-type) {
+              @include pc {
+                width: 2.1rem;
+                margin-left: -0.2rem;
+              }
+            }
+            &:nth-of-type(2) {
+              transform: rotate(-1deg);
+            }
+            &:nth-of-type(3) {
+              transform: rotate(-2deg);
+            }
+            &:nth-of-type(4) {
+              transform: rotate(-4deg);
+              @include pc {
+                margin-top: 0.1rem;
+              }
+            }
+            &:nth-of-type(5) {
+              transform: rotate(-7deg);
+              @include pc {
+                margin-top: 0.2rem;
+              }
+            }
+            &:nth-of-type(6) {
+              transform: rotate(-12deg);
+              @include pc {
+                margin-top: 0.3rem;
+              }
+            }
+            &:nth-of-type(7) {
+              transform: rotate(-19deg);
+              @include pc {
+                margin-top: 0.4rem;
+              }
+            }
+          }
+        }
+        .fang {
+          display: flex;
+          position: absolute;
           @include pc {
-            width: 0.6rem;
-            height: 2.1rem;
+            top: -0.9rem;
+            left: 1.3rem;
+            column-gap: 0.6rem;
+          }
+          > span {
+            border-radius: 9999px 0 0 0;
+            @include pc {
+              width: 0.6rem;
+              height: 0.8rem;
+            }
+          }
+        }
+        .lip {
+          position: absolute;
+          display: flex;
+          @include pc {
+            top: -0.2rem;
+            left: -0.3rem;
+          }
+          > span {
+            &:first-of-type {
+              border-radius: 9999px 0 9999px 9999px;
+              @include pc {
+                width: 11.5rem;
+                height: 0.6rem;
+              }
+            }
+            &:nth-of-type(2) {
+              position: absolute;
+              border-radius: 0 0 9999px 0;
+              @include pc {
+                width: 0.6rem;
+                height: 0.6rem;
+                top: 0;
+                right: -0.4rem;
+              }
+            }
           }
         }
       }
     }
-    .upper {
+    .body {
+      z-index: 2;
       position: absolute;
       @include pc {
-        width: 11rem;
-        height: 3rem;
-        left: 3rem;
-        top: 2.6rem;
+        top: 18.3rem;
+        left: 12.1rem;
       }
-      .nose {
-        position: absolute;
+      .dou {
+        z-index: 3;
+        position: relative;
         display: flex;
+        .column {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          @include pc {
+            width: 7.7rem;
+          }
+          &--1 {
+            .block {
+              &:first-of-type {
+                transform: scaleY(1.3);
+                transform-origin: center bottom;
+              }
+              &:last-of-type {
+                border-radius: 0 0 0 9999px;
+              }
+            }
+          }
+          &--2,
+          &--4 {
+            .block {
+              &:first-of-type {
+                border-radius: 9999px 0 0 0;
+              }
+              &:last-of-type {
+                border-radius: 0 0 9999px 0;
+              }
+            }
+          }
+          &--3,
+          &--5 {
+            .block {
+              &:first-of-type {
+                border-radius: 0 9999px 0 0;
+              }
+              &:last-of-type {
+                border-radius: 0 0 0 9999px;
+              }
+            }
+          }
+          &--6 {
+            @include pc {
+              margin-top: 7.7rem;
+            }
+            .block {
+              @include pc {
+                border-radius: 0 0 9999px 0;
+              }
+            }
+          }
+        }
+        .curve {
+          position: relative;
+          @include pc {
+            width: 2.3rem;
+          }
+          &--1,
+          &--3 {
+            margin-top: auto;
+          }
+        }
+        .block {
+          z-index: 3;
+          position: relative;
+          &--a {
+            @include pc {
+              height: 7.7rem;
+            }
+          }
+          &--b {
+            @include pc {
+              height: 5.4rem;
+            }
+          }
+          &--c {
+            @include pc {
+              height: 2.3rem;
+            }
+          }
+        }
+        .scale {
+          z-index: 2;
+          position: absolute;
+          display: flex;
+          span {
+            @include pc {
+              width: 1.6rem;
+              height: 2.5rem;
+            }
+          }
+          &--1,
+          &--3,
+          &--5 {
+            span {
+              border-radius: 0 0 0 9999px;
+            }
+          }
+          &--1,
+          &--3 {
+            @include pc {
+              bottom: -2rem;
+              left: calc(50% - 2.4rem);
+            }
+          }
+          &--2,
+          &--4,
+          &--6 {
+            span {
+              border-radius: 9999px 0 0 0;
+            }
+          }
+          &--2,
+          &--4 {
+            @include pc {
+              top: -2rem;
+              left: calc(50% - 2.4rem);
+            }
+          }
+          &--5 {
+            @include pc {
+              bottom: 5.7rem;
+              left: -2.4rem;
+            }
+          }
+          &--6 {
+            @include pc {
+              right: 0;
+              top: -2rem;
+            }
+          }
+        }
+      }
+      .leg {
+        position: absolute;
+        transform-origin: right center;
         @include pc {
-          bottom: 0.3rem;
-          left: -2.5rem;
+          width: 4.5rem;
+          height: 2.4rem;
         }
         > span {
-          border-radius: 50%;
+          position: absolute;
           &:first-of-type {
-            position: relative;
-            display: flex;
+            clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 80%);
+            width: 100%;
+            height: 100%;
+          }
+          &:not(:first-of-type) {
+            transform-origin: right center;
             @include pc {
-              width: 4.9rem;
-              height: 4.6rem;
+              width: 2.8rem;
+              height: 0.8rem;
+              left: -2.3rem;
+              top: 0.8rem;
             }
-            .hole {
-              border-radius: 50%;
+            > span {
+              position: absolute;
+              top: 0;
               @include pc {
                 width: 0.8rem;
                 height: 0.8rem;
-                margin-top: 1.2rem;
-                margin-left: 1rem;
+                left: -0.8rem;
               }
             }
-            .lip {
-              z-index: -1;
-              position: absolute;
-              @include pc {
-                bottom: -0.6rem;
-                left: -0.6rem;
-              }
-              > span {
-                position: relative;
-                &:first-of-type {
-                  border-radius: 50%;
-                  clip-path: inset(50% 0 0 0);
-                  @include pc {
-                    width: 6.1rem;
-                    height: 5.8rem;
-                  }
-                }
-                &:nth-of-type(2) {
-                  position: absolute;
-                  border-radius: 50%;
-                  @include pc {
-                    width: 1.2rem;
-                    height: 1.2rem;
-                    left: 0rem;
-                    top: 2.4rem;
-                  }
-                }
-              }
+            &:nth-of-type(2) {
+              transform: rotate(45deg);
             }
-          }
-          &:nth-of-type(2) {
-            @include pc {
-              width: 3.1rem;
-              height: 3.4rem;
-              margin-left: -1rem;
-              margin-top: 1rem;
+            &:nth-of-type(3) {
+              transform: rotate(15deg);
+            }
+            &:nth-of-type(4) {
+              transform: rotate(-15deg);
+            }
+            &:nth-of-type(5) {
+              transform: rotate(-45deg);
             }
           }
         }
-      }
-      .fang {
-        display: flex;
-        position: absolute;
-        @include pc {
-          bottom: -1rem;
-          left: 0.1rem;
-          column-gap: 0.6rem;
-        }
-        > span {
-          border-radius: 0 0 0 9999px;
+        &--1 {
+          z-index: 2;
+          // transform: rotate(-10deg);
+          transform: rotate(-7deg);
+          animation: leg1 1s linear infinite paused;
           @include pc {
-            width: 0.6rem;
-            height: 0.8rem;
+            left: -3rem;
+            bottom: 4.9rem;
+          }
+          > span {
+            > span {
+              border-radius: 9999px 0 0 0;
+            }
           }
         }
-      }
-      .lip {
-        position: absolute;
-        @include pc {
-          bottom: -0.3rem;
-          left: 0;
-        }
-        > span {
+        &--2 {
+          z-index: 4;
+          // transform: rotate(-55deg);
+          transform: rotate(-58deg);
+          animation: leg2 1s linear infinite paused;
           @include pc {
-            width: 10.3rem;
-            height: 0.6rem;
+            left: -1.6rem;
+            bottom: 2.5rem;
+          }
+          > span {
+            > span {
+              border-radius: 0 0 0 9999px;
+            }
           }
         }
-      }
-    }
-    .lower {
-      position: absolute;
-      transform-origin: right top;
-      transform: rotate(-10deg);
-      border-radius: 0 0 0 9999px;
-      @include pc {
-        width: 12rem;
-        height: 2.7rem;
-        left: 2.2rem;
-        top: 7.2rem;
-      }
-      .mane {
-        position: absolute;
-        display: flex;
-        transform-origin: left top;
-        transform: rotate(5deg);
-        top: 0;
-        left: 0;
-        span {
-          border-radius: 0 0 0 9999px;
-          transform-origin: left top;
+        &--3 {
+          z-index: 4;
+          // transform: rotate(230deg);
+          transform: rotate(233deg);
+          animation: leg3 1s linear infinite paused;
           @include pc {
-            height: 3.8rem;
+            left: 29.5rem;
+            bottom: 2.4rem;
           }
-          &:first-of-type {
-            @include pc {
-              width: 3.3rem;
-            }
-          }
-          &:not(:first-of-type) {
-            @include pc {
-              width: 2.1rem;
-              margin-left: -0.2rem;
-            }
-          }
-          &:nth-of-type(2) {
-            transform: rotate(-1deg);
-          }
-          &:nth-of-type(3) {
-            transform: rotate(-2deg);
-          }
-          &:nth-of-type(4) {
-            transform: rotate(-4deg);
-            @include pc {
-              margin-top: 0.1rem;
-            }
-          }
-          &:nth-of-type(5) {
-            transform: rotate(-7deg);
-            @include pc {
-              margin-top: 0.2rem;
-            }
-          }
-          &:nth-of-type(6) {
-            transform: rotate(-12deg);
-            @include pc {
-              margin-top: 0.3rem;
-            }
-          }
-          &:nth-of-type(7) {
-            transform: rotate(-19deg);
-            @include pc {
-              margin-top: 0.4rem;
+          > span {
+            > span {
+              border-radius: 0 0 0 9999px;
             }
           }
         }
-      }
-      .fang {
-        display: flex;
-        position: absolute;
-        @include pc {
-          top: -0.9rem;
-          left: 1.3rem;
-          column-gap: 0.6rem;
-        }
-        > span {
-          border-radius: 9999px 0 0 0;
+        &--4 {
+          z-index: 2;
+          // transform: rotate(190deg);
+          transform: rotate(187deg);
+          animation: leg4 1s linear infinite paused;
           @include pc {
-            width: 0.6rem;
-            height: 0.8rem;
+            left: 30.3rem;
+            bottom: 5rem;
           }
-        }
-      }
-      .lip {
-        position: absolute;
-        display: flex;
-        @include pc {
-          top: -0.2rem;
-          left: -0.3rem;
-        }
-        > span {
-          &:first-of-type {
-            border-radius: 9999px 0 9999px 9999px;
-            @include pc {
-              width: 11.5rem;
-              height: 0.6rem;
-            }
-          }
-          &:nth-of-type(2) {
-            position: absolute;
-            border-radius: 0 0 9999px 0;
-            @include pc {
-              width: 0.6rem;
-              height: 0.6rem;
-              top: 0;
-              right: -0.4rem;
+          > span {
+            > span {
+              border-radius: 0 0 0 9999px;
             }
           }
         }
       }
     }
   }
-  .body {
-    z-index: 2;
-    position: absolute;
+  .player {
+    position: relative;
+    display: flex;
     @include pc {
-      top: 18.3rem;
-      left: 12.1rem;
+      margin-left: auto;
+      margin-right: -5rem;
+      column-gap: 2.4rem;
     }
-    .dou {
-      z-index: 3;
-      position: relative;
+    button {
       display: flex;
-      .column {
-        position: relative;
-        display: flex;
-        flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      height: 100%;
+      @include pc {
+        width: 6rem;
+        height: 6rem;
+      }
+      &.play {
         @include pc {
-          width: 7.7rem;
+          column-gap: 0.6rem;
         }
-        &--1 {
-          .block {
-            &:first-of-type {
-              transform: scaleY(1.3);
-              transform-origin: center bottom;
-            }
-            &:last-of-type {
-              border-radius: 0 0 0 9999px;
-            }
-          }
-        }
-        &--2,
-        &--4 {
-          .block {
-            &:first-of-type {
-              border-radius: 9999px 0 0 0;
-            }
-            &:last-of-type {
-              border-radius: 0 0 9999px 0;
-            }
-          }
-        }
-        &--3,
-        &--5 {
-          .block {
-            &:first-of-type {
-              border-radius: 0 9999px 0 0;
-            }
-            &:last-of-type {
-              border-radius: 0 0 0 9999px;
-            }
-          }
-        }
-        &--6 {
-          @include pc {
-            margin-top: 7.7rem;
-          }
-          .block {
+        > span {
+          position: relative;
+          &:first-of-type {
+            transform: rotate(120deg) skewY(30deg) scaleX(0.86666);
+            border-top-left-radius: 0.2rem;
             @include pc {
-              border-radius: 0 0 9999px 0;
+              width: 1.2rem;
+              height: 1.2rem;
+              margin-left: 0.5rem;
+            }
+            &::before,
+            &::after {
+              content: '';
+              position: absolute;
+              display: block;
+              background: var(--c_3);
+              @include pc {
+                width: 1.2rem;
+                height: 1.2rem;
+              }
+            }
+            &::before {
+              transform: translateX(50%) skewX(-45deg);
+              border-top-right-radius: 0.2rem;
+            }
+            &::after {
+              transform: translateY(50%) skewY(-45deg);
+              border-bottom-left-radius: 0.2rem;
             }
           }
-        }
-      }
-      .curve {
-        position: relative;
-        @include pc {
-          width: 2.3rem;
-        }
-        &--1,
-        &--3 {
-          margin-top: auto;
-        }
-      }
-      .block {
-        z-index: 3;
-        position: relative;
-        &--a {
-          @include pc {
-            height: 7.7rem;
-          }
-        }
-        &--b {
-          @include pc {
-            height: 5.4rem;
-          }
-        }
-        &--c {
-          @include pc {
-            height: 2.3rem;
-          }
-        }
-      }
-      .scale {
-        z-index: 2;
-        position: absolute;
-        display: flex;
-        span {
-          @include pc {
-            width: 1.6rem;
-            height: 2.5rem;
-          }
-        }
-        &--1,
-        &--3,
-        &--5 {
-          span {
-            border-radius: 0 0 0 9999px;
-          }
-        }
-        &--1,
-        &--3 {
-          @include pc {
-            bottom: -2rem;
-            left: calc(50% - 2.4rem);
-          }
-        }
-        &--2,
-        &--4,
-        &--6 {
-          span {
-            border-radius: 9999px 0 0 0;
-          }
-        }
-        &--2,
-        &--4 {
-          @include pc {
-            top: -2rem;
-            left: calc(50% - 2.4rem);
-          }
-        }
-        &--5 {
-          @include pc {
-            bottom: 5.7rem;
-            left: -2.4rem;
-          }
-        }
-        &--6 {
-          @include pc {
-            right: 0;
-            top: -2rem;
+          &:nth-of-type(2),
+          &:nth-of-type(3) {
+            display: none;
           }
         }
       }
     }
-    .leg {
-      position: absolute;
-      transform-origin: right center;
-      @include pc {
-        width: 4.5rem;
-        height: 2.4rem;
-      }
-      > span {
-        position: absolute;
-        &:first-of-type {
-          clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 80%);
-          width: 100%;
-          height: 100%;
+  }
+  &.is-playing {
+    --c_1: #f16b6b;
+    --c_2: #ffc2bf;
+    --c_3: #ffdfdb;
+    --c_4: #ffdcb4;
+    .dragon {
+      .body {
+        .leg {
+          animation-play-state: running;
         }
-        &:not(:first-of-type) {
-          transform-origin: right center;
-          @include pc {
-            width: 2.8rem;
-            height: 0.8rem;
-            left: -2.3rem;
-            top: 0.8rem;
-          }
+      }
+    }
+    .player {
+      button {
+        &.play {
           > span {
-            position: absolute;
-            top: 0;
-            @include pc {
-              width: 0.8rem;
-              height: 0.8rem;
-              left: -0.8rem;
+            &:first-of-type {
+              display: none;
             }
-          }
-          &:nth-of-type(2) {
-            transform: rotate(45deg);
-          }
-          &:nth-of-type(3) {
-            transform: rotate(15deg);
-          }
-          &:nth-of-type(4) {
-            transform: rotate(-15deg);
-          }
-          &:nth-of-type(5) {
-            transform: rotate(-45deg);
-          }
-        }
-      }
-      &--1 {
-        z-index: 2;
-        transform: rotate(-10deg);
-        @include pc {
-          left: -3rem;
-          bottom: 4.9rem;
-        }
-        > span {
-          > span {
-            border-radius: 9999px 0 0 0;
-          }
-        }
-      }
-      &--2 {
-        z-index: 4;
-        transform: rotate(-54deg);
-        @include pc {
-          left: -1.6rem;
-          bottom: 2.5rem;
-        }
-        > span {
-          > span {
-            border-radius: 0 0 0 9999px;
-          }
-        }
-      }
-      &--3 {
-        z-index: 4;
-        transform: rotate(228deg);
-        @include pc {
-          left: 29.5rem;
-          bottom: 2.4rem;
-        }
-        > span {
-          > span {
-            border-radius: 0 0 0 9999px;
-          }
-        }
-      }
-      &--4 {
-        z-index: 2;
-        transform: rotate(200deg);
-        @include pc {
-          left: 30.3rem;
-          bottom: 5rem;
-        }
-        > span {
-          > span {
-            border-radius: 0 0 0 9999px;
+            &:nth-of-type(2),
+            &:nth-of-type(3) {
+              display: block;
+              border-radius: 0.2rem;
+              @include pc {
+                width: 0.6rem;
+                height: 2.4rem;
+              }
+            }
           }
         }
       }
@@ -784,23 +883,47 @@
   }
 }
 
-.player {
-  position: relative;
-  display: flex;
-  @include pc {
-    margin-left: auto;
-    margin-right: -5rem;
-    column-gap: 2.4rem;
+@keyframes leg1 {
+  0% {
+    transform: rotate(-7deg);
   }
-  button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    height: 100%;
-    @include pc {
-      width: 6rem;
-      height: 6rem;
-    }
+  50% {
+    transform: rotate(-13deg);
+  }
+  100% {
+    transform: rotate(-7deg);
+  }
+}
+@keyframes leg2 {
+  0% {
+    transform: rotate(-58deg);
+  }
+  50% {
+    transform: rotate(-52deg);
+  }
+  100% {
+    transform: rotate(-58deg);
+  }
+}
+@keyframes leg3 {
+  0% {
+    transform: rotate(233deg);
+  }
+  50% {
+    transform: rotate(227deg);
+  }
+  100% {
+    transform: rotate(233deg);
+  }
+}
+@keyframes leg4 {
+  0% {
+    transform: rotate(187deg);
+  }
+  50% {
+    transform: rotate(193deg);
+  }
+  100% {
+    transform: rotate(187deg);
   }
 }
