@@ -729,7 +729,7 @@
           z-index: 2;
           // transform: rotate(-10deg);
           transform: rotate(-7deg);
-          animation: leg1 1s linear infinite paused;
+          animation: leg1 0.8s linear infinite paused;
           @include pc {
             left: -3rem;
             bottom: 4.9rem;
@@ -744,7 +744,7 @@
           z-index: 4;
           // transform: rotate(-55deg);
           transform: rotate(-58deg);
-          animation: leg2 1s linear infinite paused;
+          animation: leg2 0.8s linear infinite paused;
           @include pc {
             left: -1.6rem;
             bottom: 2.5rem;
@@ -759,7 +759,7 @@
           z-index: 4;
           // transform: rotate(230deg);
           transform: rotate(233deg);
-          animation: leg3 1s linear infinite paused;
+          animation: leg3 0.8s linear infinite paused;
           @include pc {
             left: 29.5rem;
             bottom: 2.4rem;
@@ -774,7 +774,7 @@
           z-index: 2;
           // transform: rotate(190deg);
           transform: rotate(187deg);
-          animation: leg4 1s linear infinite paused;
+          animation: leg4 0.8s linear infinite paused;
           @include pc {
             left: 30.3rem;
             bottom: 5rem;

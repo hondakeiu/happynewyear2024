@@ -12,7 +12,8 @@
   "dependencies": {
     "gsap": "^3.12.2",
     "npm-check-updates": "^16.14.6",
-    "ress": "^5.0.2"
+    "ress": "^5.0.2",
+    "tone": "^14.7.77"
   },
   "devDependencies": {
     "@types/node": "^20.8.6",
