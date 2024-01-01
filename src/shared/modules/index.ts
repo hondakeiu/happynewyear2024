@@ -10,7 +10,7 @@ const play = () => {
     player.unload();
   }
   player = new Howl({
-    src: [`src/home/sounds/track${currentTrack}.mp3`],
+    src: [`public/assets/sounds/track${currentTrack}.mp3`],
     volume: volumes[currentTrack - 1],
     onload: () => {
       console.log(pausedTime);
