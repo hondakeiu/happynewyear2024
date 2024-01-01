@@ -923,7 +923,7 @@
       --c_4: #ffdcb4;
     }
     &.is-track2 {
-      --c_1: #5f8962;
+      --c_1: #659068;
       --c_2: #b3d58b;
       --c_3: #e2eca7;
       --c_4: #eadabf;
@@ -931,6 +931,19 @@
         .body {
           .leg {
             animation-duration: 0.6s;
+          }
+        }
+      }
+    }
+    &.is-track3 {
+      --c_1: #5f8cb3;
+      --c_2: #badeec;
+      --c_3: #faefae;
+      --c_4: #f8d4d0;
+      .dragon {
+        .body {
+          .leg {
+            animation-duration: 1.5s;
           }
         }
       }

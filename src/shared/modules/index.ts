@@ -3,6 +3,7 @@ import { Howl } from 'howler';
 let player: Howl | null = null;
 let pausedTime = 0;
 let currentTrack = 1;
+const volumes = [0.5, 0.4, 0.4];
 
 const play = () => {
   if (player) {
@@ -10,17 +11,17 @@ const play = () => {
   }
   player = new Howl({
     src: [`src/home/sounds/track${currentTrack}.mp3`],
-    volume: 0.9,
+    volume: volumes[currentTrack - 1],
     onload: () => {
       console.log(pausedTime);
-      home.classList.remove('is-track1', 'is-track2');
+      home.classList.remove('is-track1', 'is-track2', 'is-track3');
       home.classList.add(`is-track${currentTrack}`);
       player?.play();
       player?.seek(pausedTime);
     },
     onend: () => {
       home.classList.remove(`is-track${currentTrack}`);
-      currentTrack = currentTrack === 1 ? 2 : 1;
+      currentTrack = currentTrack % 3 + 1;
       pausedTime = 0;
       play();
     },
@@ -52,7 +53,7 @@ playButton.addEventListener('click', () => {
 
 backButton.addEventListener('click', () => {
   if (player && player.playing()) {
-    currentTrack = currentTrack === 1 ? 2 : 1;
+    currentTrack = currentTrack === 1 ? 3 : currentTrack - 1;
     pausedTime = 0;
     player.stop();
     play();
@@ -61,7 +62,7 @@ backButton.addEventListener('click', () => {
 
 skipButton.addEventListener('click', () => {
   if (player && player.playing()) {
-    currentTrack = currentTrack === 1 ? 2 : 1;
+    currentTrack = currentTrack % 3 + 1;
     pausedTime = 0;
     player.stop();
     play();
