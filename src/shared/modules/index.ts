@@ -2,26 +2,38 @@ import * as Tone from 'tone';
 
 let player: Tone.Player | null = null;
 let pausedTime = 0;
+let currentTrack = 1;
 
 const play = async () => {
-  if (!player) {
-    player = new Tone.Player({
-      url: 'src/home/sounds/track1.mp3',
-      autostart: false,
-    }).toDestination();
-    player.volume.value = -10;
+  if (player) {
+    player.dispose();
   }
+  player = new Tone.Player({
+    url: `src/home/sounds/track${currentTrack}.mp3`,
+    autostart: false,
+    onload: () => {
+      player?.start('+0.1', pausedTime);
+      home.classList.add(`is-track${currentTrack}`);
+    },
+    onstop: () => {
+      home.classList.remove(`is-track${currentTrack}`);
+      currentTrack = currentTrack === 1 ? 2 : 1;
+      pausedTime = 0;
+      play();
+    },
+  }).toDestination();
+  player.volume.value = -10;
   await Tone.start();
   await Tone.loaded();
   Tone.Transport.start();
-  player.start('+0.1', pausedTime);
 };
 
 const pause = () => {
   if (player && player.state === 'started') {
     Tone.Transport.pause();
     pausedTime = Tone.Transport.seconds;
-    player.stop();
+    player.dispose();
+    player = null;
   }
 };
 
