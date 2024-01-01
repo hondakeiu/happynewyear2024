@@ -1,38 +1,35 @@
-import * as Tone from 'tone';
+import { Howl } from 'howler';
 
-let player: Tone.Player | null = null;
+let player: Howl | null = null;
 let pausedTime = 0;
 let currentTrack = 1;
 
-const play = async () => {
+const play = () => {
   if (player) {
-    player.dispose();
+    player.unload();
   }
-  player = new Tone.Player({
-    url: `src/home/sounds/track${currentTrack}.mp3`,
-    autostart: false,
+  player = new Howl({
+    src: [`src/home/sounds/track${currentTrack}.mp3`],
+    volume: 0.9,
     onload: () => {
-      player?.start('+0.1', pausedTime);
+      console.log(pausedTime);
+      player?.play();
+      player?.seek(pausedTime);
       home.classList.add(`is-track${currentTrack}`);
     },
-    onstop: () => {
+    onend: () => {
       home.classList.remove(`is-track${currentTrack}`);
       currentTrack = currentTrack === 1 ? 2 : 1;
       pausedTime = 0;
       play();
     },
-  }).toDestination();
-  player.volume.value = -10;
-  await Tone.start();
-  await Tone.loaded();
-  Tone.Transport.start();
+  });
 };
 
 const pause = () => {
-  if (player && player.state === 'started') {
-    Tone.Transport.pause();
-    pausedTime = Tone.Transport.seconds;
-    player.dispose();
+  if (player && player.playing()) {
+    pausedTime = player.seek() as number;
+    player.unload();
     player = null;
   }
 };
