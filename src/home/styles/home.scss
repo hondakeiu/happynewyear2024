@@ -806,6 +806,42 @@
         width: 6rem;
         height: 6rem;
       }
+      &.back,
+      &.skip {
+        pointer-events: none;
+        > span {
+          position: relative;
+          transform: rotate(120deg) skewY(30deg) scaleX(0.86666);
+          border-top-left-radius: 0.2rem;
+          @include pc {
+            width: 0.9rem;
+            height: 0.9rem;
+            margin-left: 0.4rem;
+          }
+          &::before,
+          &::after {
+            content: '';
+            position: absolute;
+            display: block;
+            background: var(--c_3);
+            @include pc {
+              width: 0.9rem;
+              height: 0.9rem;
+            }
+          }
+          &::before {
+            transform: translateX(50%) skewX(-45deg);
+            border-top-right-radius: 0.2rem;
+          }
+          &::after {
+            transform: translateY(50%) skewY(-45deg);
+            border-bottom-left-radius: 0.2rem;
+          }
+        }
+      }
+      &.back {
+        transform: scale(-1, 1);
+      }
       &.play {
         @include pc {
           column-gap: 0.6rem;
@@ -858,6 +894,10 @@
     }
     .player {
       button {
+        &.back,
+        &.skip {
+          pointer-events: auto;
+        }
         &.play {
           > span {
             &:first-of-type {

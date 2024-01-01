@@ -13,9 +13,10 @@ const play = () => {
     volume: 0.9,
     onload: () => {
       console.log(pausedTime);
+      home.classList.remove('is-track1', 'is-track2');
+      home.classList.add(`is-track${currentTrack}`);
       player?.play();
       player?.seek(pausedTime);
-      home.classList.add(`is-track${currentTrack}`);
     },
     onend: () => {
       home.classList.remove(`is-track${currentTrack}`);
@@ -36,6 +37,8 @@ const pause = () => {
 
 const home = document.querySelector('.home')!;
 const playButton = document.querySelector('.player button.play')!;
+const backButton = document.querySelector('.player button.back')!;
+const skipButton = document.querySelector('.player button.skip')!;
 
 playButton.addEventListener('click', () => {
   if (home.classList.contains('is-playing')) {
@@ -43,6 +46,24 @@ playButton.addEventListener('click', () => {
     pause();
   } else {
     home.classList.add('is-playing');
+    play();
+  }
+});
+
+backButton.addEventListener('click', () => {
+  if (player && player.playing()) {
+    currentTrack = currentTrack === 1 ? 2 : 1;
+    pausedTime = 0;
+    player.stop();
+    play();
+  }
+});
+
+skipButton.addEventListener('click', () => {
+  if (player && player.playing()) {
+    currentTrack = currentTrack === 1 ? 2 : 1;
+    pausedTime = 0;
+    player.stop();
     play();
   }
 });
