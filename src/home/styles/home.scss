@@ -849,10 +849,6 @@
     }
   }
   &.is-playing {
-    --c_1: #f16b6b;
-    --c_2: #ffc2bf;
-    --c_3: #ffdfdb;
-    --c_4: #ffdcb4;
     .dragon {
       .body {
         .leg {
@@ -876,6 +872,25 @@
                 height: 2.4rem;
               }
             }
+          }
+        }
+      }
+    }
+    &.is-track1 {
+      --c_1: #f16b6b;
+      --c_2: #ffc2bf;
+      --c_3: #ffdfdb;
+      --c_4: #ffdcb4;
+    }
+    &.is-track2 {
+      --c_1: #5f8962;
+      --c_2: #b3d58b;
+      --c_3: #e2eca7;
+      --c_4: #eadabf;
+      .dragon {
+        .body {
+          .leg {
+            animation-duration: 0.6s;
           }
         }
       }

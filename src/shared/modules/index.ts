@@ -9,7 +9,7 @@ const play = async () => {
       url: 'src/home/sounds/track1.mp3',
       autostart: false,
     }).toDestination();
-    player.volume.value = -20;
+    player.volume.value = -10;
   }
   await Tone.start();
   await Tone.loaded();
