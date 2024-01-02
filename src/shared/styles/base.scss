@@ -35,6 +35,9 @@ body {
   @include pc {
     min-height: 64rem;
   }
+  @include sp {
+    min-height: 50rem;
+  }
 }
 
 span {

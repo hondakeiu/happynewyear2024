@@ -15,6 +15,10 @@
       height: 8rem;
       background-size: 8rem 8rem;
     }
+    @include sp {
+      height: 5rem;
+      background-size: 5rem 5rem;
+    }
   }
   &::before {
     top: 0;
@@ -23,6 +27,11 @@
         -2rem -4rem,
         2rem -4rem;
     }
+    @include sp {
+      background-position:
+        -1.25rem -2.5rem,
+        1.25rem -2.5rem;
+    }
   }
   &::after {
     bottom: 0;
@@ -30,6 +39,11 @@
       background-position:
         -2rem 4rem,
         2rem 4rem;
+    }
+    @include sp {
+      background-position:
+        -1.25rem 2.5rem,
+        1.25rem 2.5rem;
     }
   }
   .inner {
@@ -42,88 +56,10 @@
       height: 52rem;
       margin-top: 2rem;
     }
-  }
-  .stars {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    .star {
-      position: absolute;
-      border-radius: 50%;
-      overflow: hidden;
-      > span {
-        position: absolute;
-        display: block;
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        &:first-of-type {
-          top: -50%;
-          left: -50%;
-        }
-        &:nth-of-type(2) {
-          top: -50%;
-          left: 50%;
-        }
-        &:nth-of-type(3) {
-          top: 50%;
-          left: -50%;
-        }
-        &:nth-of-type(4) {
-          top: 50%;
-          left: 50%;
-        }
-      }
-      &--l {
-        @include pc {
-          width: 8rem;
-          height: 8rem;
-        }
-      }
-      &--m {
-        @include pc {
-          width: 6rem;
-          height: 6rem;
-        }
-      }
-      &--s {
-        @include pc {
-          width: 4rem;
-          height: 4rem;
-        }
-      }
-      &:first-of-type {
-        @include pc {
-          top: 0;
-          left: -6rem;
-        }
-      }
-      &:nth-of-type(2) {
-        @include pc {
-          top: 7rem;
-          left: -8rem;
-        }
-      }
-      &:nth-of-type(3) {
-        @include pc {
-          right: -1rem;
-          bottom: 14rem;
-        }
-      }
-      &:nth-of-type(4) {
-        @include pc {
-          right: -4.5rem;
-          bottom: 19rem;
-        }
-      }
-      &:nth-of-type(5) {
-        @include pc {
-          left: -4rem;
-          bottom: 1rem;
-        }
-      }
+    @include sp {
+      width: 30rem;
+      height: 40rem;
+      margin-top: 3rem;
     }
   }
   .clouds {
@@ -160,7 +96,7 @@
       &:first-of-type {
         @include pc {
           left: -14rem;
-          bottom: 15rem;
+          bottom: 2rem;
         }
         > span {
           &:first-of-type {
@@ -184,8 +120,8 @@
       }
       &:nth-of-type(2) {
         @include pc {
-          right: -12rem;
-          top: 17rem;
+          right: -10rem;
+          top: 22rem;
         }
         > span {
           &:first-of-type {
@@ -215,15 +151,25 @@
       column-gap: 0.6rem;
       margin-left: auto;
     }
+    @include sp {
+      justify-content: center;
+      column-gap: 0.3rem;
+    }
     .num {
       display: flex;
       @include pc {
         width: 9rem;
       }
+      @include sp {
+        width: 4.8rem;
+      }
       &--2 {
         flex-direction: column;
         @include pc {
           height: 10.8rem;
+        }
+        @include sp {
+          height: 5.7rem;
         }
         span {
           flex: 1;
@@ -239,6 +185,9 @@
         @include pc {
           width: 10.8rem;
         }
+        @include sp {
+          width: 5.7rem;
+        }
         > span {
           display: flex;
           justify-content: center;
@@ -252,6 +201,10 @@
               width: 4.5rem;
               height: 4.5rem;
             }
+            @include sp {
+              width: 2.4rem;
+              height: 2.4rem;
+            }
           }
         }
       }
@@ -263,11 +216,18 @@
             @include pc {
               height: 7.2rem;
             }
+            @include sp {
+              height: 3.8rem;
+            }
           }
           &:nth-of-type(2) {
             @include pc {
               height: 3.6rem;
               margin-top: 3.6rem;
+            }
+            @include sp {
+              height: 1.9rem;
+              margin-top: 1.9rem;
             }
           }
         }
@@ -282,58 +242,58 @@
       top: 4rem;
       left: 0;
     }
+    @include sp {
+      width: 100%;
+      height: 23rem;
+      top: 8.8rem;
+      left: 0.3rem;
+    }
     .face {
       z-index: 3;
       position: absolute;
+      width: 27.5rem;
+      height: 13rem;
       @include pc {
-        width: 27.5rem;
-        height: 13rem;
         left: 0;
         top: 8rem;
+      }
+      @include sp {
+        transform: scale(0.53);
+        transform-origin: left top;
+        left: 0;
+        top: 3.9rem;
       }
       .cheek {
         position: absolute;
         border-radius: 9999px 9999px 9999px 0;
-        @include pc {
-          width: 7.2rem;
-          height: 9.5rem;
-          left: 13.3rem;
-          top: 0.5rem;
-        }
+        width: 7.2rem;
+        height: 9.5rem;
+        left: 13.3rem;
+        top: 0.5rem;
         .fire {
           z-index: -1;
           position: absolute;
           display: flex;
           flex-direction: column;
-          @include pc {
-            right: -7rem;
-            top: 0.9rem;
-          }
+          right: -7rem;
+          top: 0.9rem;
           > span {
             display: flex;
             align-items: center;
             border-radius: 0 0 9999px 0;
             transform-origin: left top;
-            @include pc {
-              width: 10rem;
-              height: 3.7rem;
-            }
+            width: 10rem;
+            height: 3.7rem;
             &:first-of-type {
-              @include pc {
-                transform: rotate(-20deg) translate(-1rem, 1.9rem);
-              }
+              transform: rotate(-20deg) translate(-1rem, 1.9rem);
             }
             &:nth-of-type(3) {
-              @include pc {
-                transform: rotate(20deg) translate(-0.2rem, -2.3rem);
-              }
+              transform: rotate(20deg) translate(-0.2rem, -2.3rem);
             }
             > span {
               border-radius: 0 0 9999px 0;
-              @include pc {
-                width: 8.5rem;
-                height: 2.1rem;
-              }
+              width: 8.5rem;
+              height: 2.1rem;
             }
           }
         }
@@ -343,132 +303,96 @@
           flex-direction: column;
           transform-origin: left top;
           transform: rotate(-30deg);
-          @include pc {
-            right: -1.9rem;
-            top: 2.4rem;
-          }
+          right: -1.9rem;
+          top: 2.4rem;
           span {
             transform-origin: left top;
             border-radius: 0 0 9999px 0;
-            @include pc {
-              width: 3.8rem;
-              height: 2.1rem;
-            }
+            width: 3.8rem;
+            height: 2.1rem;
             &:nth-of-type(2) {
               transform: rotate(25deg);
-              @include pc {
-                margin-top: -1.1rem;
-              }
+              margin-top: -1.1rem;
             }
             &:nth-of-type(3) {
               transform: rotate(45deg);
-              @include pc {
-                margin-top: -0.8rem;
-                margin-left: -0.3rem;
-              }
+              margin-top: -0.8rem;
+              margin-left: -0.3rem;
             }
             &:nth-of-type(4) {
               transform: rotate(72deg);
-              @include pc {
-                margin-top: -1.1rem;
-                margin-left: -0.7rem;
-              }
+              margin-top: -1.1rem;
+              margin-left: -0.7rem;
             }
             &:nth-of-type(5) {
               transform: rotate(90deg);
-              @include pc {
-                margin-top: -1.9rem;
-                margin-left: -2.1rem;
-              }
+              margin-top: -1.9rem;
+              margin-left: -2.1rem;
             }
           }
         }
         .horn {
           position: absolute;
-          @include pc {
-            top: 1rem;
-            left: 2.2rem;
-          }
+          top: 1rem;
+          left: 2.2rem;
           > span {
             position: absolute;
             border-radius: 0 0 9999px 0;
             transform-origin: left top;
-            @include pc {
-              width: 10rem;
-              height: 1.5rem;
-            }
+            width: 10rem;
+            height: 1.5rem;
             > span {
               position: absolute;
               border-radius: 9999px 0 0 0;
-              @include pc {
-                width: 1.5rem;
-                height: 1.5rem;
-                top: -1.4rem;
-                right: 1.5rem;
-              }
+              width: 1.5rem;
+              height: 1.5rem;
+              top: -1.4rem;
+              right: 1.5rem;
             }
             &:first-of-type {
               transform: rotate(-65deg);
-              @include pc {
-                top: 0;
-                left: 0;
-              }
+              top: 0;
+              left: 0;
             }
             &:nth-of-type(2) {
               transform: rotate(-45deg);
-              @include pc {
-                left: 2rem;
-                top: -0.5rem;
-              }
+              left: 2rem;
+              top: -0.5rem;
             }
           }
         }
         .eyebrow {
           position: absolute;
-          @include pc {
-            left: 0;
-            top: 0.9rem;
-          }
+          left: 0;
+          top: 0.9rem;
           > span {
             position: absolute;
             top: 0;
             left: 0;
             transform-origin: left bottom;
             border-radius: 9999px 0 9999px 0;
-            @include pc {
-              height: 1.3rem;
-            }
+            height: 1.3rem;
             &:first-of-type {
-              @include pc {
-                width: 7rem;
-              }
+              width: 7rem;
             }
             &:nth-of-type(2) {
               transform: rotate(-10deg);
-              @include pc {
-                width: 6.3rem;
-              }
+              width: 6.3rem;
             }
             &:nth-of-type(3) {
               transform: rotate(-20deg);
-              @include pc {
-                width: 5.6rem;
-              }
+              width: 5.6rem;
             }
             &:nth-of-type(4) {
               transform: rotate(-30deg);
-              @include pc {
-                width: 4rem;
-              }
+              width: 4rem;
             }
           }
         }
         .eye {
           position: absolute;
-          @include pc {
-            top: 1rem;
-            left: -0.5rem;
-          }
+          top: 1rem;
+          left: -0.5rem;
           span {
             display: flex;
             border-radius: 50%;
@@ -476,29 +400,21 @@
           > span {
             align-items: center;
             justify-content: center;
-            @include pc {
-              width: 3.5rem;
-              height: 3.5rem;
-            }
+            width: 3.5rem;
+            height: 3.5rem;
             > span {
-              @include pc {
-                width: 3rem;
-                height: 3rem;
-              }
+              width: 3rem;
+              height: 3rem;
               > span {
-                @include pc {
-                  width: 1.4rem;
-                  height: 1.4rem;
-                  margin-top: 0.6rem;
-                  margin-left: 0.3rem;
-                }
+                width: 1.4rem;
+                height: 1.4rem;
+                margin-top: 0.6rem;
+                margin-left: 0.3rem;
                 > span {
-                  @include pc {
-                    width: 0.4rem;
-                    height: 0.4rem;
-                    margin-top: 0.4rem;
-                    margin-left: 0.3rem;
-                  }
+                  width: 0.4rem;
+                  height: 0.4rem;
+                  margin-top: 0.4rem;
+                  margin-left: 0.3rem;
                 }
               }
             }
@@ -508,119 +424,91 @@
           position: absolute;
           display: flex;
           flex-direction: column;
-          @include pc {
-            top: 4.8rem;
-            left: -0.1rem;
-          }
+          top: 4.8rem;
+          left: -0.1rem;
           > span {
             border-radius: 0 9999px 0 0;
-            @include pc {
-              width: 0.6rem;
-              height: 2.1rem;
-            }
+            width: 0.6rem;
+            height: 2.1rem;
           }
         }
       }
       .upper {
         position: absolute;
-        @include pc {
-          width: 11rem;
-          height: 3rem;
-          left: 3rem;
-          top: 2.6rem;
-        }
+        width: 11rem;
+        height: 3rem;
+        left: 3rem;
+        top: 2.6rem;
         .nose {
           position: absolute;
           display: flex;
-          @include pc {
-            bottom: 0.3rem;
-            left: -2.5rem;
-          }
+          bottom: 0.3rem;
+          left: -2.5rem;
           > span {
             border-radius: 50%;
             &:first-of-type {
               position: relative;
               display: flex;
-              @include pc {
-                width: 4.9rem;
-                height: 4.6rem;
-              }
+              width: 4.9rem;
+              height: 4.6rem;
               .hole {
                 border-radius: 50%;
-                @include pc {
-                  width: 0.8rem;
-                  height: 0.8rem;
-                  margin-top: 1.2rem;
-                  margin-left: 1rem;
-                }
+                width: 0.8rem;
+                height: 0.8rem;
+                margin-top: 1.2rem;
+                margin-left: 1rem;
               }
               .lip {
                 z-index: -1;
                 position: absolute;
-                @include pc {
-                  bottom: -0.6rem;
-                  left: -0.6rem;
-                }
+                bottom: -0.6rem;
+                left: -0.6rem;
                 > span {
                   position: relative;
                   &:first-of-type {
                     border-radius: 50%;
                     clip-path: inset(50% 0 0 0);
-                    @include pc {
-                      width: 6.1rem;
-                      height: 5.8rem;
-                    }
+                    width: 6.1rem;
+                    height: 5.8rem;
                   }
                   &:nth-of-type(2) {
                     position: absolute;
                     border-radius: 50%;
-                    @include pc {
-                      width: 1.2rem;
-                      height: 1.2rem;
-                      left: 0rem;
-                      top: 2.4rem;
-                    }
+                    width: 1.2rem;
+                    height: 1.2rem;
+                    left: 0rem;
+                    top: 2.4rem;
                   }
                 }
               }
             }
             &:nth-of-type(2) {
-              @include pc {
-                width: 3.1rem;
-                height: 3.4rem;
-                margin-left: -1rem;
-                margin-top: 1rem;
-              }
+              width: 3.1rem;
+              height: 3.4rem;
+              margin-left: -1rem;
+              margin-top: 1rem;
             }
           }
         }
         .fang {
           display: flex;
           position: absolute;
-          @include pc {
-            bottom: -1rem;
-            left: 0.1rem;
-            column-gap: 0.6rem;
-          }
+          bottom: -1rem;
+          left: 0.1rem;
+          column-gap: 0.6rem;
           > span {
             border-radius: 0 0 0 9999px;
-            @include pc {
-              width: 0.6rem;
-              height: 0.8rem;
-            }
+            width: 0.6rem;
+            height: 0.8rem;
           }
         }
         .lip {
           position: absolute;
-          @include pc {
-            bottom: -0.3rem;
-            left: 0;
-          }
+          bottom: -0.3rem;
+          left: 0;
           > span {
-            @include pc {
-              width: 10.3rem;
-              height: 0.6rem;
-            }
+            width: 10.3rem;
+            height: 0.6rem;
           }
         }
       }
@@ -629,12 +517,10 @@
         transform-origin: right top;
         transform: rotate(-10deg);
         border-radius: 0 0 0 9999px;
-        @include pc {
-          width: 12rem;
-          height: 2.7rem;
-          left: 2.2rem;
-          top: 7.2rem;
-        }
+        width: 12rem;
+        height: 2.7rem;
+        left: 2.2rem;
+        top: 7.2rem;
         .mane {
           position: absolute;
           display: flex;
@@ -645,19 +531,13 @@
           span {
             border-radius: 0 0 0 9999px;
             transform-origin: left top;
-            @include pc {
-              height: 3.8rem;
-            }
+            height: 3.8rem;
             &:first-of-type {
-              @include pc {
-                width: 3.3rem;
-              }
+              width: 3.3rem;
             }
             &:not(:first-of-type) {
-              @include pc {
-                width: 2.1rem;
-                margin-left: -0.2rem;
-              }
+              width: 2.1rem;
+              margin-left: -0.2rem;
             }
             &:nth-of-type(2) {
               transform: rotate(-1deg);
@@ -667,70 +547,52 @@
             }
             &:nth-of-type(4) {
               transform: rotate(-4deg);
-              @include pc {
-                margin-top: 0.1rem;
-              }
+              margin-top: 0.1rem;
             }
             &:nth-of-type(5) {
               transform: rotate(-7deg);
-              @include pc {
-                margin-top: 0.2rem;
-              }
+              margin-top: 0.2rem;
             }
             &:nth-of-type(6) {
               transform: rotate(-12deg);
-              @include pc {
-                margin-top: 0.3rem;
-              }
+              margin-top: 0.3rem;
             }
             &:nth-of-type(7) {
               transform: rotate(-19deg);
-              @include pc {
-                margin-top: 0.4rem;
-              }
+              margin-top: 0.4rem;
             }
           }
         }
         .fang {
           display: flex;
           position: absolute;
-          @include pc {
-            top: -0.9rem;
-            left: 1.3rem;
-            column-gap: 0.6rem;
-          }
+          top: -0.9rem;
+          left: 1.3rem;
+          column-gap: 0.6rem;
           > span {
             border-radius: 9999px 0 0 0;
-            @include pc {
-              width: 0.6rem;
-              height: 0.8rem;
-            }
+            width: 0.6rem;
+            height: 0.8rem;
           }
         }
         .lip {
           position: absolute;
           display: flex;
-          @include pc {
-            top: -0.2rem;
-            left: -0.3rem;
-          }
+          top: -0.2rem;
+          left: -0.3rem;
           > span {
             &:first-of-type {
               border-radius: 9999px 0 9999px 9999px;
-              @include pc {
-                width: 11.5rem;
-                height: 0.6rem;
-              }
+              width: 11.5rem;
+              height: 0.6rem;
             }
             &:nth-of-type(2) {
               position: absolute;
               border-radius: 0 0 9999px 0;
-              @include pc {
-                width: 0.6rem;
-                height: 0.6rem;
-                top: 0;
-                right: -0.4rem;
-              }
+              width: 0.6rem;
+              height: 0.6rem;
+              top: 0;
+              right: -0.4rem;
             }
           }
         }
@@ -743,6 +605,10 @@
         top: 18.3rem;
         left: 12.1rem;
       }
+      @include sp {
+        top: 9.3rem;
+        left: 6.2rem;
+      }
       .dou {
         z-index: 3;
         position: relative;
@@ -753,6 +619,9 @@
           flex-direction: column;
           @include pc {
             width: 7.7rem;
+          }
+          @include sp {
+            width: 4rem;
           }
           &--1 {
             .block {
@@ -792,9 +661,7 @@
               margin-top: 7.7rem;
             }
             .block {
-              @include pc {
-                border-radius: 0 0 9999px 0;
-              }
+              border-radius: 0 0 9999px 0;
             }
           }
           &--1 {
@@ -804,6 +671,10 @@
                 @include pc {
                   background-size: 1.4rem 1.4rem;
                   background-position: -0.3rem -0.1rem;
+                }
+                @include sp {
+                  background-size: 1rem 1rem;
+                  background-position: 0 -0.15rem;
                 }
               }
             }
@@ -815,6 +686,10 @@
                 @include pc {
                   background-size: 100% 1.4rem;
                   background-position: 0 -0.2rem;
+                }
+                @include sp {
+                  background-size: 100% 1rem;
+                  background-position: 0 -0.4rem;
                 }
               }
             }
@@ -828,30 +703,43 @@
                   background-size: 1.2rem 1.2rem;
                   background-position: 0 0.5rem;
                 }
+                @include sp {
+                  background-size: 0.8rem 0.8rem;
+                  background-position: 0 0;
+                }
               }
             }
           }
           &--4 {
             .block {
               &:nth-of-type(2) {
+                background-image: linear-gradient(transparent 50%, var(--c_1) 0), radial-gradient(circle closest-side, var(--c_3) 100%, transparent 0);
+                background-repeat: repeat-x;
                 @include pc {
-                  background-image: linear-gradient(transparent 50%, var(--c_1) 0),
-                    radial-gradient(circle closest-side, var(--c_3) 100%, transparent 0);
                   background-size: 1.2rem 1.2rem;
                   background-position:
                     0 0.8rem,
                     -0.3rem 0.8rem;
-                  background-repeat: repeat-x;
+                }
+                @include sp {
+                  background-size: 0.8rem 0.8rem;
+                  background-position:
+                    0 0.4rem,
+                    0 0.4rem;
                 }
               }
             }
           }
           &--6 {
             .block {
+              background-image: radial-gradient(var(--c_1) 75%, transparent 0);
               @include pc {
-                background-image: radial-gradient(var(--c_1) 75%, transparent 0);
                 background-size: 1.5rem 1.5rem;
                 background-position: 0.8rem 0.9rem;
+              }
+              @include sp {
+                background-size: 1rem 1rem;
+                background-position: 0.5rem 0.5rem;
               }
             }
           }
@@ -860,6 +748,9 @@
           position: relative;
           @include pc {
             width: 2.3rem;
+          }
+          @include sp {
+            width: 1.3rem;
           }
           &--1,
           &--3 {
@@ -872,6 +763,10 @@
                 background-size: 100% 1.4rem;
                 background-position: 0 -0.2rem;
               }
+              @include sp {
+                background-size: 100% 1rem;
+                background-position: 0 -0.4rem;
+              }
             }
           }
         }
@@ -882,15 +777,24 @@
             @include pc {
               height: 7.7rem;
             }
+            @include sp {
+              height: 4rem;
+            }
           }
           &--b {
             @include pc {
               height: 5.4rem;
             }
+            @include sp {
+              height: 2.7rem;
+            }
           }
           &--c {
             @include pc {
               height: 2.3rem;
+            }
+            @include sp {
+              height: 1.3rem;
             }
           }
         }
@@ -902,6 +806,10 @@
             @include pc {
               width: 1.6rem;
               height: 2.5rem;
+            }
+            @include sp {
+              width: 0.8rem;
+              height: 1.3rem;
             }
           }
           &--1,
@@ -917,6 +825,10 @@
               bottom: -2rem;
               left: calc(50% - 2.4rem);
             }
+            @include sp {
+              bottom: -1rem;
+              left: calc(50% - 1.2rem);
+            }
           }
           &--2,
           &--4,
@@ -931,6 +843,10 @@
               top: -2rem;
               left: calc(50% - 2.4rem);
             }
+            @include sp {
+              top: -1rem;
+              left: calc(50% - 1.2rem);
+            }
           }
           &--5 {
             @include pc {
@@ -943,6 +859,10 @@
               right: 0;
               top: -2rem;
             }
+            @include sp {
+              top: -1rem;
+              left: -1.2rem;
+            }
           }
         }
       }
@@ -952,6 +872,10 @@
         @include pc {
           width: 4.5rem;
           height: 2.4rem;
+        }
+        @include sp {
+          width: 2.3rem;
+          height: 1.4rem;
         }
         > span {
           position: absolute;
@@ -968,6 +892,12 @@
               left: -2.3rem;
               top: 0.8rem;
             }
+            @include sp {
+              width: 1.5rem;
+              height: 0.5rem;
+              left: -1.3rem;
+              top: 0.5rem;
+            }
             > span {
               position: absolute;
               top: 0;
@@ -975,6 +905,11 @@
                 width: 0.8rem;
                 height: 0.8rem;
                 left: -0.8rem;
+              }
+              @include sp {
+                width: 0.5rem;
+                height: 0.5rem;
+                left: -0.5rem;
               }
             }
             &:nth-of-type(2) {
@@ -1000,6 +935,10 @@
             left: -3rem;
             bottom: 4.9rem;
           }
+          @include sp {
+            left: -1.1rem;
+            bottom: 2.3rem;
+          }
           > span {
             > span {
               border-radius: 9999px 0 0 0;
@@ -1014,6 +953,10 @@
           @include pc {
             left: -1.6rem;
             bottom: 2.5rem;
+          }
+          @include sp {
+            left: -0.5rem;
+            bottom: 1.3rem;
           }
           > span {
             > span {
@@ -1030,6 +973,10 @@
             left: 29.5rem;
             bottom: 2.4rem;
           }
+          @include sp {
+            left: 15.3rem;
+            bottom: 1.1rem;
+          }
           > span {
             > span {
               border-radius: 0 0 0 9999px;
@@ -1044,6 +991,10 @@
           @include pc {
             left: 30.3rem;
             bottom: 5rem;
+          }
+          @include sp {
+            left: 16rem;
+            bottom: 2.3rem;
           }
           > span {
             > span {
@@ -1062,6 +1013,10 @@
       margin-right: -5rem;
       column-gap: 2.4rem;
     }
+    @include sp {
+      justify-content: center;
+      column-gap: 2.2rem;
+    }
     button {
       position: relative;
       display: flex;
@@ -1073,6 +1028,10 @@
         width: 6rem;
         height: 6rem;
       }
+      @include sp {
+        width: 5rem;
+        height: 5rem;
+      }
       &.back,
       &.skip {
         pointer-events: none;
@@ -1080,10 +1039,14 @@
           position: relative;
           transform: rotate(120deg) skewY(30deg) scaleX(0.86666);
           border-top-left-radius: 0.2rem;
+          margin-left: 0.4rem;
           @include pc {
             width: 0.9rem;
             height: 0.9rem;
-            margin-left: 0.4rem;
+          }
+          @include sp {
+            width: 0.8rem;
+            height: 0.8rem;
           }
           &::before,
           &::after {
@@ -1094,6 +1057,10 @@
             @include pc {
               width: 0.9rem;
               height: 0.9rem;
+            }
+            @include sp {
+              width: 0.8rem;
+              height: 0.8rem;
             }
           }
           &::before {
@@ -1113,6 +1080,9 @@
         @include pc {
           column-gap: 0.6rem;
         }
+        @include sp {
+          column-gap: 0.5rem;
+        }
         > span {
           position: relative;
           &:first-of-type {
@@ -1123,6 +1093,11 @@
               height: 1.2rem;
               margin-left: 0.5rem;
             }
+            @include sp {
+              width: 1rem;
+              height: 1rem;
+              margin-left: 0.4rem;
+            }
             &::before,
             &::after {
               content: '';
@@ -1132,6 +1107,10 @@
               @include pc {
                 width: 1.2rem;
                 height: 1.2rem;
+              }
+              @include sp {
+                width: 1rem;
+                height: 1rem;
               }
             }
             &::before {
@@ -1160,6 +1139,10 @@
       @include pc {
         width: 6rem;
         height: 6rem;
+      }
+      @include sp {
+        width: 5rem;
+        height: 5rem;
       }
     }
   }
@@ -1234,6 +1217,10 @@
               @include pc {
                 width: 0.6rem;
                 height: 2.4rem;
+              }
+              @include sp {
+                width: 0.5rem;
+                height: 2rem;
               }
             }
           }
