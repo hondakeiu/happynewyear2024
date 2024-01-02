@@ -864,6 +864,7 @@
       column-gap: 2.4rem;
     }
     button {
+      position: relative;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -950,6 +951,63 @@
         }
       }
     }
+    .loading {
+      pointer-events: none;
+      display: none;
+      border: 0.5rem solid var(--c_1);
+      border-top: 0.5rem solid transparent;
+      border-radius: 50%;
+      animation: loading 1s linear infinite paused;
+      @include pc {
+        width: 6rem;
+        height: 6rem;
+      }
+    }
+  }
+  &.is-track1 {
+    --c_1: #e96666;
+    --c_2: #ffc8b3;
+    --c_3: #ffe4da;
+    --c_4: #ffeac1;
+  }
+  &.is-track2 {
+    --c_1: #679150;
+    --c_2: #c7d38a;
+    --c_3: #f7efb2;
+    --c_4: #eaeeb2;
+    .dragon {
+      .body {
+        .leg {
+          animation-duration: 0.6s;
+        }
+      }
+    }
+  }
+  &.is-track3 {
+    --c_1: #e8677a;
+    --c_2: #fcbec3;
+    --c_3: #e2eeee;
+    --c_4: #f9e0d0;
+    .dragon {
+      .body {
+        .leg {
+          animation-duration: 1s;
+        }
+      }
+    }
+  }
+  &.is-track4 {
+    --c_1: #5d7db1;
+    --c_2: #bad2e4;
+    --c_3: #e4e7f7;
+    --c_4: #ffe5e0;
+    .dragon {
+      .body {
+        .leg {
+          animation-duration: 1.5s;
+        }
+      }
+    }
   }
   &.is-playing {
     .dragon {
@@ -982,50 +1040,24 @@
           }
         }
       }
-    }
-    &.is-track1 {
-      --c_1: #e96666;
-      --c_2: #ffc8b3;
-      --c_3: #ffe4da;
-      --c_4: #ffeac1;
-    }
-    &.is-track2 {
-      --c_1: #679150;
-      --c_2: #c7d38a;
-      --c_3: #f7efb2;
-      --c_4: #eaeeb2;
-      .dragon {
-        .body {
-          .leg {
-            animation-duration: 0.6s;
-          }
-        }
+      .loading {
+        display: none;
       }
     }
-    &.is-track3 {
-      --c_1: #e8677a;
-      --c_2: #fcbec3;
-      --c_3: #e2eeee;
-      --c_4: #f9e0d0;
-      .dragon {
-        .body {
-          .leg {
-            animation-duration: 1s;
-          }
+  }
+  &.is-loading {
+    .player {
+      button {
+        &.play {
+          display: none;
+        }
+        &.back, &.skip {
+          visibility: hidden;
         }
       }
-    }
-    &.is-track4 {
-      --c_1: #5d7db1;
-      --c_2: #bad2e4;
-      --c_3: #e4e7f7;
-      --c_4: #ffe5e0;
-      .dragon {
-        .body {
-          .leg {
-            animation-duration: 1.5s;
-          }
-        }
+      .loading {
+        display: block;
+        animation-play-state: running;
       }
     }
   }
@@ -1073,5 +1105,14 @@
   }
   100% {
     transform: rotate(187deg);
+  }
+}
+
+@keyframes loading {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }

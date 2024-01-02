@@ -4,23 +4,28 @@ let player: Howl | null = null;
 let pausedTime = 0;
 let currentTrack = 1;
 const volumes = [0.45, 0.4, 0.35, 0.35];
+const length = volumes.length;
 
 const play = () => {
   if (player) {
     player.unload();
   }
+  home.classList.add('is-loading');
   player = new Howl({
     src: [`assets/sounds/track${currentTrack}.mp3`],
     volume: volumes[currentTrack - 1],
     onload: () => {
-      home.classList.remove('is-track1', 'is-track2', 'is-track3', 'is-track4');
-      home.classList.add(`is-track${currentTrack}`);
+      home.classList.remove('is-loading', 'is-playing', 'is-track1', 'is-track2', 'is-track3', 'is-track4');
+      home.classList.add(`is-track${currentTrack}`, 'is-playing');
       player?.play();
       player?.seek(pausedTime);
     },
+    onloaderror: () => {
+      home.classList.remove('is-loading');
+    },
     onend: () => {
-      home.classList.remove(`is-track${currentTrack}`);
-      currentTrack = currentTrack % 4 + 1;
+      home.classList.remove(`is-track${currentTrack}`, 'is-playing');
+      currentTrack = (currentTrack % length) + 1;
       pausedTime = 0;
       play();
     },
@@ -32,6 +37,7 @@ const pause = () => {
     pausedTime = player.seek() as number;
     player.unload();
     player = null;
+    home.classList.remove('is-playing');
   }
 };
 
@@ -42,17 +48,16 @@ const skipButton = document.querySelector('.player button.skip')!;
 
 playButton.addEventListener('click', () => {
   if (home.classList.contains('is-playing')) {
-    home.classList.remove('is-playing');
     pause();
   } else {
-    home.classList.add('is-playing');
     play();
   }
 });
 
 backButton.addEventListener('click', () => {
   if (player && player.playing()) {
-    currentTrack = currentTrack === 1 ? 4 : currentTrack - 1;
+    home.classList.remove('is-playing');
+    currentTrack = currentTrack === 1 ? length : currentTrack - 1;
     pausedTime = 0;
     player.stop();
     play();
@@ -61,7 +66,8 @@ backButton.addEventListener('click', () => {
 
 skipButton.addEventListener('click', () => {
   if (player && player.playing()) {
-    currentTrack = currentTrack % 4 + 1;
+    home.classList.remove('is-playing');
+    currentTrack = (currentTrack % length) + 1;
     pausedTime = 0;
     player.stop();
     play();
