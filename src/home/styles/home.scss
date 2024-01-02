@@ -650,9 +650,9 @@
           &--6 {
             .block {
               @include pc {
-                background-image: radial-gradient(var(--c_1) 80%, transparent 0);
-                background-size: 1.8rem 1.8rem;
-                background-position: 0.9rem 1.1rem;
+                background-image: radial-gradient(var(--c_1) 75%, transparent 0);
+                background-size: 1.5rem 1.5rem;
+                background-position: 0.8rem 0.9rem;
               }
             }
           }
@@ -1003,9 +1003,22 @@
       }
     }
     &.is-track3 {
+      --c_1: #e8677a;
+      --c_2: #fcbec3;
+      --c_3: #e2eeee;
+      --c_4: #f9e0d0;
+      .dragon {
+        .body {
+          .leg {
+            animation-duration: 1s;
+          }
+        }
+      }
+    }
+    &.is-track4 {
       --c_1: #5d7db1;
       --c_2: #bad2e4;
-      --c_3: #e4edf7;
+      --c_3: #e4e7f7;
       --c_4: #ffe5e0;
       .dragon {
         .body {
