@@ -713,19 +713,22 @@
           &--4 {
             .block {
               &:nth-of-type(2) {
-                background-image: linear-gradient(transparent 50%, var(--c_1) 0), radial-gradient(circle closest-side, var(--c_3) 100%, transparent 0);
+                background-image: linear-gradient(transparent 50%, var(--c_1) 0), radial-gradient(circle closest-side, var(--c_3) 50%, transparent 0),
+                  radial-gradient(circle closest-side, var(--c_3) 50%, transparent 0);
                 background-repeat: repeat-x;
                 @include pc {
-                  background-size: 1.2rem 1.2rem;
+                  background-size: 2.4rem 2.4rem;
                   background-position:
-                    0 0.8rem,
-                    -0.3rem 0.8rem;
+                    0 0.2rem,
+                    -0.6rem 0.2rem,
+                    0.6rem 0.2rem;
                 }
                 @include sp {
-                  background-size: 0.8rem 0.8rem;
+                  background-size: 1.6rem 1.6rem;
                   background-position:
-                    0 0.4rem,
-                    0 0.4rem;
+                    0 0,
+                    -0.4rem 0,
+                    0.4rem 0;
                 }
               }
             }
