@@ -13,7 +13,6 @@ const play = () => {
     src: [`assets/sounds/track${currentTrack}.mp3`],
     volume: volumes[currentTrack - 1],
     onload: () => {
-      console.log(pausedTime);
       home.classList.remove('is-track1', 'is-track2', 'is-track3');
       home.classList.add(`is-track${currentTrack}`);
       player?.play();
