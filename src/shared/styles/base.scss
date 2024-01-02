@@ -21,6 +21,7 @@ html {
 }
 
 body {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -32,12 +33,16 @@ body {
   height: 100vh;
   height: 100dvh;
   @include pc {
-    min-height: 60rem;
+    min-height: 64rem;
   }
 }
 
 span {
   display: block;
+}
+
+.b0{
+  background: var(--c_bg);
 }
 
 .b1 {
