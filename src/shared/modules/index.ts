@@ -3,7 +3,7 @@ import { Howl } from 'howler';
 let player: Howl | null = null;
 let pausedTime = 0;
 let currentTrack = 1;
-const volumes = [0.45, 0.45, 0.35, 0.38, 0.33];
+const volumes = [0.45, 0.45, 0.35, 0.4, 0.32];
 const length = volumes.length;
 
 const play = () => {
