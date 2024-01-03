@@ -20,11 +20,37 @@
   }
   &::before {
     top: 0;
-    background-image: radial-gradient(circle at top ,var(--c_1), var(--c_1) 10%,transparent 10%, transparent 20%, var(--c_1) 20%, var(--c_1) 30%, transparent 30%, transparent 40%, var(--c_1) 40%, var(--c_1) 50%, transparent 50%);
+    background-image: radial-gradient(
+      circle at top,
+      var(--c_1),
+      var(--c_1) 10%,
+      transparent 10%,
+      transparent 20%,
+      var(--c_1) 20%,
+      var(--c_1) 30%,
+      transparent 30%,
+      transparent 40%,
+      var(--c_1) 40%,
+      var(--c_1) 50%,
+      transparent 50%
+    );
   }
   &::after {
     bottom: 0;
-    background-image: radial-gradient(circle at bottom ,var(--c_1), var(--c_1) 10%,transparent 10%, transparent 20%, var(--c_1) 20%, var(--c_1) 30%, transparent 30%, transparent 40%, var(--c_1) 40%, var(--c_1) 50%, transparent 50%);
+    background-image: radial-gradient(
+      circle at bottom,
+      var(--c_1),
+      var(--c_1) 10%,
+      transparent 10%,
+      transparent 20%,
+      var(--c_1) 20%,
+      var(--c_1) 30%,
+      transparent 30%,
+      transparent 40%,
+      var(--c_1) 40%,
+      var(--c_1) 50%,
+      transparent 50%
+    );
   }
   .inner {
     position: relative;
@@ -1080,6 +1106,19 @@
     }
   }
   &.is-track4 {
+    --c_1: #f5744c;
+    --c_2: #fdbf93;
+    --c_3: #fdebb5;
+    --c_4: #e6ebcc;
+    .dragon {
+      .body {
+        .leg {
+          animation-duration: 0.6s;
+        }
+      }
+    }
+  }
+  &.is-track5 {
     --c_1: #5d7db1;
     --c_2: #bad2e4;
     --c_3: #e4e7f7;
@@ -1087,7 +1126,7 @@
     .dragon {
       .body {
         .leg {
-          animation-duration: 1.5s;
+          animation-duration: 0.75s;
         }
       }
     }

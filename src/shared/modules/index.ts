@@ -3,7 +3,7 @@ import { Howl } from 'howler';
 let player: Howl | null = null;
 let pausedTime = 0;
 let currentTrack = 1;
-const volumes = [0.45, 0.4, 0.35, 0.35];
+const volumes = [0.45, 0.4, 0.35, 0.35, 0.35];
 const length = volumes.length;
 
 const play = () => {
@@ -16,7 +16,7 @@ const play = () => {
     src: [`assets/sounds/track${currentTrack}.mp3`],
     volume: volumes[currentTrack - 1],
     onload: () => {
-      home.classList.remove('is-loading', 'is-playing', 'is-track1', 'is-track2', 'is-track3', 'is-track4');
+      home.classList.remove('is-loading', 'is-playing', 'is-track1', 'is-track2', 'is-track3', 'is-track4', 'is-track5');
       home.classList.add(`is-track${currentTrack}`, 'is-playing');
       player?.play();
       player?.seek(pausedTime);
