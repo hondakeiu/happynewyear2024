@@ -11,6 +11,7 @@ const play = () => {
     player.unload();
   }
   home.classList.add('is-loading');
+  home.classList.remove('is-paused');
   player = new Howl({
     src: [`assets/sounds/track${currentTrack}.mp3`],
     volume: volumes[currentTrack - 1],
@@ -38,6 +39,7 @@ const pause = () => {
     player.unload();
     player = null;
     home.classList.remove('is-playing');
+    home.classList.add('is-paused');
   }
 };
 
@@ -55,21 +57,25 @@ playButton.addEventListener('click', () => {
 });
 
 backButton.addEventListener('click', () => {
+  currentTrack = currentTrack === 1 ? length : currentTrack - 1;
+  pausedTime = 0;
   if (player && player.playing()) {
     home.classList.remove('is-playing');
-    currentTrack = currentTrack === 1 ? length : currentTrack - 1;
-    pausedTime = 0;
     player.stop();
-    play();
+  } else {
+    home.classList.remove('is-paused');
   }
+  play();
 });
 
 skipButton.addEventListener('click', () => {
+  currentTrack = (currentTrack % length) + 1;
+  pausedTime = 0;
   if (player && player.playing()) {
     home.classList.remove('is-playing');
-    currentTrack = (currentTrack % length) + 1;
-    pausedTime = 0;
     player.stop();
-    play();
+  } else {
+    home.classList.remove('is-paused');
   }
+  play();
 });

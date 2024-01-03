@@ -33,10 +33,10 @@ body {
   height: 100vh;
   height: 100dvh;
   @include pc {
-    min-height: 64rem;
+    min-height: 70rem;
   }
   @include sp {
-    min-height: 50rem;
+    min-height: 55rem;
   }
 }
 
