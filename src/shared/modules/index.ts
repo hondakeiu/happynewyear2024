@@ -52,12 +52,7 @@ playButton.addEventListener('click', () => {
   if (home.classList.contains('is-playing')) {
     pause();
   } else {
-    if (player) {
-      home.classList.add('is-playing');
-      player.play();
-    } else {
-      play();
-    }
+    play();
   }
 });
 
